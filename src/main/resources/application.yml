@@ -1,0 +1,47 @@
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,text/html,text/css,text/plain, text/javascript, application/javascript
+  port: 8080
+  connection-timeout: 300000
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    resources:
+        static-locations: classpath:/static/**
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://daou.cghsaszfpkxh.ap-northeast-2.rds.amazonaws.com:3306/daou?useUnicode=true&serverTimezone=Asia/Seoul
+    username: admin
+    password: ekdnrltnf
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate.format_sql: true # 형식화된 sql 문을 보여준다. Beautifier 기능이라고 생각하면 된다
+      hibernate.enable_lazy_load_no_trans: true #Lazy Load 를 적용하기 위한 설정
+  devtools:
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
+
+
