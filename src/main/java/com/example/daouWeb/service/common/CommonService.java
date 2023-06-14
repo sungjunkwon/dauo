@@ -6,7 +6,7 @@ import com.example.daouWeb.dto.admin.AdminDTO;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface CommonService extends UserDetailsService {
-    Result signupSuperAdmin(AdminDTO input);
+    Result signupSuperAdmin(Admin input);
 
     Result signupAdmin(Admin input);
 

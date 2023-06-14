@@ -30,7 +30,7 @@ pageEncoding="UTF-8" %>
 
                    <div class="form-outline mb-4">
                        <label class="col-sm-4 control-label" for="boradTitle">과목</label>
-                       <input type="text" class="form-control" id="boardTitle" name="boardTitle" placeholder="과목" value="증권 교육">
+                       <input type="text" class="form-control" id="boardTitle" name="boardTitle" placeholder="과목" value="증권 교육" readOnly>
                    </div>
 
                    <div class="form-outline mb-4">
@@ -40,8 +40,8 @@ pageEncoding="UTF-8" %>
 
                    <!-- Submit button -->
                    <div class="form-outline mb-4 text-center">
-                       <input type="button" class="btn btn-primary pull-right" id="btnInsert" value="등록"/>
-                       <input type="button" class="btn btn-danger pull-right" id="btnCancel"  value="취소"/>
+                       <input type="button" class="btn btn-kiwoom pull-right" id="btnInsert" value="등록"/>
+                       <input type="button" class="btn btn-gray pull-right" id="btnCancel"  value="취소"/>
                    </div>
                </form>
            </div>

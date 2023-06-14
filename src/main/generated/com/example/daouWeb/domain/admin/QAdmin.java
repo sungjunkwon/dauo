@@ -30,6 +30,8 @@ public class QAdmin extends EntityPathBase<Admin> {
 
     public final NumberPath<Long> adminNo = createNumber("adminNo", Long.class);
 
+    public final StringPath adminPhone = createString("adminPhone");
+
     public final StringPath adminPw = createString("adminPw");
 
     public final QAdminRole adminRole;

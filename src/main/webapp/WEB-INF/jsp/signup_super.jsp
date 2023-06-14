@@ -6,13 +6,13 @@ pageEncoding="UTF-8" %>
 
 <t:template title="daou">
     <jsp:attribute name="javascriptSrc">
-        <script src="/js/board/board.js"></script>
+        <script src="/js/admin/admin.js"></script>
     </jsp:attribute>
     <jsp:body>
       <div class="container">
         <h3>관리자 회원 가입</h3>
         <div class="form-border">
-            <form method="POST" action="/signup-super" data-parsley-validate>
+            <form id="superSignupForm" data-parsley-validate>
               <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
               <div class="form-outline mb-4">
@@ -22,15 +22,15 @@ pageEncoding="UTF-8" %>
               </div>
 
               <div class="form-outline mb-4">
-                  <label class="col-sm-4 control-label" for="inputPassword">비밀번호</label>
-                  <input type="password" class="form-control" id="inputPassword" name="adminPw" placeholder="비밀번호를 입력하세요 (영문+숫자 6자리 이상)" data-parsley-required="true"
+                  <label class="col-sm-4 control-label" for="inputPw">비밀번호</label>
+                  <input type="password" class="form-control" id="inputPw" name="adminPw" placeholder="비밀번호를 입력하세요 (영문+숫자 6자리 이상)" data-parsley-required="true"
                          data-parsley-trigger="change" data-parsley-minlength="6" data-parsley-pattern="/^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/">
               </div>
 
               <div class="form-outline mb-4">
                   <label class="col-sm-4 control-label" for="inputConfirm">비밀번호 확인</label>
                   <input type="password" class="form-control" id="inputConfirm" placeholder="비밀번호를 다시 한번 입력하세요" data-parsley-required="true" data-parsley-trigger="change"
-                         data-parsley-minlength="6" data-parsley-equalto="#inputPassword" data-parsley-pattern="/^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/">
+                         data-parsley-minlength="6" data-parsley-equalto="#inputPw" data-parsley-pattern="/^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/">
               </div>
 
               <div class="form-outline mb-4">
@@ -45,8 +45,8 @@ pageEncoding="UTF-8" %>
 
               <!-- Submit button -->
               <div class="form-outline text-center">
-                  <input type="submit" class="btn btn-primary pull-right" id="btnSuperSignup" value="가입"/>
-                  <input type="button" class="btn btn-danger pull-right" id="btnCancel"  value="취소"/>
+                  <input type="button" class="btn btn-kiwoom pull-right" id="btnSuperSignup" value="가입"/>
+                  <input type="button" class="btn btn-gray pull-right" id="btnCancel"  value="취소"/>
               </div>
             </form>
         </div>

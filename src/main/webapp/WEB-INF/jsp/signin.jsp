@@ -6,30 +6,32 @@ pageEncoding="UTF-8" %>
 
 <t:template title="daou">
     <jsp:attribute name="javascriptSrc">
-        <!--<script src="/js/admin/admin.js"></script>-->
+        <script src="/js/admin/admin.js"></script>
     </jsp:attribute>
     <jsp:body>
        <div class="container">
            <h3>관리자 로그인</h3>
            <div class="form-border">
-               <form method="POST" action="/signin" data-parsley-validate>
+               <!--<form method="POST" action="/signin" data-parsley-validate>-->
+               <form data-parsley-validate>
                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
                     <div class="form-outline mb-4">
                        <label class="control-label" for="inputId">아이디</label>
-                       <input class="form-control" placeholder="아이디" id="inputId" name="adminId" type="text" autofocus>
+                       <input class="form-control" id="inputId" name="adminId" type="text" autofocus placeholder="아이디를 입력하세요" data-parsley-required="true" data-parsley-trigger="change"
+                        data-parsley-minlength="5" data-parsley-type="email">
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
                        <label class="control-label" for="inputPw">비밀번호</label>
-                       <input class="form-control" placeholder="비밀번호" id="inputPw" name="adminPw" type="password" value="">
+                       <input class="form-control" placeholder="비밀번호를 입력하세요" id="inputPw" name="adminPw" type="password" value="" data-parsley-required="true">
                     </div>
 
                     <!-- Submit button -->
                     <div class="form-outline text-center">
-                       <!--<button type="button" id="login" class="btn btn-primary btn-block mb-4">로그인</button>-->
-                       <button type="submit" id="login" class="btn btn-primary btn-block mb-4">로그인</button>
+                       <button type="button" id="login" class="btn btn-kiwoom btn-block mb-4">로그인</button>
+                       <!--<button type="submit" id="login" class="btn btn-kiwoom btn-block mb-4">로그인</button>-->
                     </div>
                </form>
            </div>

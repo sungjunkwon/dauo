@@ -11,10 +11,31 @@ public class AdminDTO implements Serializable {
     private String adminId;
     private String adminPw;
     private String adminNm;
+    private String adminPhone;
+
     private Long adminAuth;
 
     private LocalDateTime regDt;
     private LocalDateTime updDt;
+
+    public AdminDTO(Long adminNo, String adminId, String adminPw, String adminNm, String adminPhone) {
+        this.adminNo = adminNo;
+        this.adminId = adminId;
+        this.adminPw = adminPw;
+        this.adminNm = adminNm;
+        this.adminPhone = adminPhone;
+    }
+
+    public AdminDTO(Long adminNo, String adminId, String adminPw, String adminNm, String adminPhone, Long adminAuth, LocalDateTime regDt, LocalDateTime updDt) {
+        this.adminNo = adminNo;
+        this.adminId = adminId;
+        this.adminPw = adminPw;
+        this.adminNm = adminNm;
+        this.adminPhone = adminPhone;
+        this.adminAuth = adminAuth;
+        this.regDt = regDt;
+        this.updDt = updDt;
+    }
 
     public AdminDTO(Long adminNo, String adminId, String adminPw, String adminNm, Long adminAuth, LocalDateTime regDt, LocalDateTime updDt) {
         this.adminNo = adminNo;
@@ -80,5 +101,13 @@ public class AdminDTO implements Serializable {
 
     public void setUpdDt(LocalDateTime updDt) {
         this.updDt = updDt;
+    }
+
+    public String getAdminPhone() {
+        return adminPhone;
+    }
+
+    public void setAdminPhone(String adminPhone) {
+        this.adminPhone = adminPhone;
     }
 }

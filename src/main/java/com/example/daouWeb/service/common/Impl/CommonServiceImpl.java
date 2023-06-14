@@ -39,7 +39,7 @@ public class CommonServiceImpl implements CommonService {
     }
 
     @Override
-    public Result signupSuperAdmin(AdminDTO input) {
+    public Result signupSuperAdmin(Admin input) {
 
         Result result;
 
@@ -49,8 +49,8 @@ public class CommonServiceImpl implements CommonService {
 
         admin.setAdminNm(input.getAdminNm());
         admin.setAdminId(input.getAdminId());
-        // admin.setAdminPw(CommonUtil.encryptPassword(new BCryptPasswordEncoder(), input.getAdminPw()));
-        admin.setAdminPw(passwordEncoder.encode(input.getAdminPw()));
+        admin.setAdminPw(CommonUtil.encryptPassword(new BCryptPasswordEncoder(), input.getAdminPw()));
+        admin.setAdminPhone(input.getAdminPhone());
         admin.setAdminAuth((long) 1);
         admin.setRegDt(curDate);
 
@@ -76,8 +76,8 @@ public class CommonServiceImpl implements CommonService {
 
         admin.setAdminNm(input.getAdminNm());
         admin.setAdminId(input.getAdminId());
-        // admin.setAdminPw(CommonUtil.encryptPassword(new BCryptPasswordEncoder(), input.getAdminPw()));
-        admin.setAdminPw(passwordEncoder.encode(input.getAdminPw()));
+        admin.setAdminPw(CommonUtil.encryptPassword(new BCryptPasswordEncoder(), input.getAdminPw()));
+        //admin.setAdminPw(passwordEncoder.encode(input.getAdminPw()));
         admin.setAdminAuth((long) 1);
         admin.setRegDt(curDate);
 

@@ -27,6 +27,9 @@ public class Admin implements Serializable {
     @Column(name="admin_nm", nullable = false)
     private String adminNm;
 
+    @Column(name="admin_phone", nullable = false)
+    private String adminPhone;
+
     @Column(name="admin_auth", nullable = false)
     private Long adminAuth;
 
@@ -48,11 +51,27 @@ public class Admin implements Serializable {
         this.adminPw = adminPw;
     }
 
+    public Admin(String adminId, String adminPw, String adminNm, String adminPhone) {
+        this.adminId = adminId;
+        this.adminPw = adminPw;
+        this.adminNm = adminNm;
+        this.adminPhone = adminPhone;
+    }
+
     public Admin(Long adminNo, String adminId, String adminPw, String adminNm, LocalDateTime regDt) {
         this.adminNo = adminNo;
         this.adminId = adminId;
         this.adminPw = adminPw;
         this.adminNm = adminNm;
+        this.regDt = regDt;
+    }
+
+    public Admin(Long adminNo, String adminId, String adminPw, String adminNm, String adminPhone, LocalDateTime regDt) {
+        this.adminNo = adminNo;
+        this.adminId = adminId;
+        this.adminPw = adminPw;
+        this.adminNm = adminNm;
+        this.adminPhone = adminPhone;
         this.regDt = regDt;
     }
 
@@ -118,5 +137,13 @@ public class Admin implements Serializable {
 
     public void setAdminRole(AdminRole adminRole) {
         this.adminRole = adminRole;
+    }
+
+    public String getAdminPhone() {
+        return adminPhone;
+    }
+
+    public void setAdminPhone(String adminPhone) {
+        this.adminPhone = adminPhone;
     }
 }

@@ -41,7 +41,7 @@ pageEncoding="UTF-8" %>
                   <input type="text"  class="form-control" id="regDt" name="regDt" value="${result.regDt}" readonly>
                </div>
                <div class="form-outline mb-4 text-center">
-                   <input type="button" class="btn btn-danger pull-right" id="btnCancel"  value="닫기"/>
+                   <input type="button" class="btn btn-gray pull-right" id="btnCancel"  value="닫기"/>
                </div>
            </div>
        </div>

@@ -41,14 +41,19 @@
             <header class="d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4 border-bottom">
                 <div class="col-6 text-end">
                     <a href="/" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
-                        <img src="/img/logo.jpg"/>
+                        <img src="/img/logo.png"/>
                     </a>
                 </div>
-
                 <div class="col-6 text-end">
-                    <!--<a type="button" class="btn btn-outline-primary me-2"  href="/signin">Log in</a>-->
-                    <!--<a type="button" class="btn btn-outline-primary me-2"  href="/signOut">Log Out</a>-->
-                    <a type="button" class="btn btn-primary"  href="/signup-super">Sign up</a>
+                <c:choose>
+                    <c:when test="${sessionScope.SESSION_INFO.id eq null}">
+                        <a type="button" class="btn btn-kiwoom"  href="/signin">로그인</a>
+                        <a type="button" class="btn btn-kiwoom-outline"  href="/signup-super">회원가입</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a type="button" class="btn btn-kiwoom"  href="/signout">로그아웃</a>
+                    </c:otherwise>
+                </c:choose>
                 </div>
             </header>
         </div>
@@ -58,9 +63,11 @@
     <footer>
         <div class="container">
             <div class="col-6 text-end">
+                <!--
                 <a href="/" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
-                    <img src="/img/logo_footer.jpg"/>
+                    <img src="/img/logo_footer.png"/>
                 </a>
+                -->
             </div>
         </div>
     </footer>

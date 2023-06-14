@@ -49,7 +49,7 @@ public class AdminController {
      * @return
      */
     @RequestMapping(value="/signup-super", method = RequestMethod.POST)
-    public @ResponseBody Result signupSuper(@ModelAttribute AdminDTO input) {
+    public @ResponseBody Result signupSuper(@RequestBody Admin input) {
         return commonService.signupSuperAdmin(input);
     }
 

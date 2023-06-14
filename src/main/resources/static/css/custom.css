@@ -18,7 +18,7 @@ img[usemap] {
         display: none;
      }
     footer {
-        background: #2484c6;
+        background: #f7f7f7;
         position: absolute;
         height :60px;
         width: 100%;
@@ -40,7 +40,7 @@ img[usemap] {
     display: block;
   }
     footer {
-        background: #2484c6;
+        background: #f7f7f7;
         position: relative;
         height :60px;
         width: 100%;
@@ -76,4 +76,53 @@ h3, label.control-label {
 }
 .form-border label {
     margin-bottom : 5px;
+}
+
+.btn-kiwoom, .btn-kiwoom:hover, .btn-kiwoom:active {
+    background : #e6367e;
+    color : white;
+    border-radius: 0;
+}
+
+.btn-kiwoom-outline, .btn-kiwoom-outline:hover, .btn-kiwoom-outline:active{
+    background : #ffffff;
+    color : #e6367e;
+    border : 1px solid #e6367e;
+    border-radius: 0;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active {
+    color: #fff;
+    border: none;
+    background-color: #181949;
+    border-radius: 0;
+}
+
+.btn-gray, .btn-gray:hover, .btn-gray:active {
+    border: none;
+    background-color: #777;
+    color: #fff;
+    border-radius: 0;
+}
+
+.form-control {
+    border-radius : 0 !important;
+    // border: 1px solid #777777;
+}
+
+.form-control:focus {
+    border-radius : 0 !important;
+    border-color : #e6367e !important;
+    box-shadow: none !important;
+    // border: 1px solid #777777;
+}
+
+.parsley-required {
+    color : #e6367e !important;
+}
+
+.form-border {
+    padding: 30px;
+    border: 1px solid #777777;
+    border-radius: 1px;
 }
