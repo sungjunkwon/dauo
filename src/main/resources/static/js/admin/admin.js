@@ -13,6 +13,8 @@ $('#login').unbind().bind().on('click', function () {
         data : JSON.stringify(param),
         contentType : "application/json; charset=utf-8",
         success : function(result) {
+            console.log(result);
+
             if(result.code == '0000'){
                 window.location.href = '/board/list';
             }else{

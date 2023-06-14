@@ -126,3 +126,30 @@ h3, label.control-label {
     border: 1px solid #777777;
     border-radius: 1px;
 }
+
+.page-item.active, .page-item.active > .page-link {
+    background : #e6367e;
+    color : white;
+    border-radius: 0;
+}
+
+.page-item, .page-item:hover, .page-link, page-link:hover {
+    background : #ffffff;
+    color : #e6367e;
+    border : 1px solid #e6367e;
+    border-radius: 0;
+}
+
+.pagination {
+    --bs-pagination-active-border-color: none;
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.page-item:first-child .page-link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

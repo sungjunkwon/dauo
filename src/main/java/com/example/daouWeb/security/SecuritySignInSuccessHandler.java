@@ -42,7 +42,7 @@ public class SecuritySignInSuccessHandler extends SavedRequestAwareAuthenticatio
             }
             else {
                 logger.debug("get : " + this.getDefaultTargetUrl());
-                setDefaultTargetUrl(UrlConfig.MAIN_URL);
+                setDefaultTargetUrl("/board/list");
             }
 
             super.onAuthenticationSuccess(request, response, authentication);
