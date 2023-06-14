@@ -10,9 +10,11 @@ pageEncoding="UTF-8" %>
     </jsp:attribute>
     <jsp:body>
        <div class="container">
+           <!--
            <div class="col-12">
                <img src="/img/banner.png" class="img-fluid" id="banner"/>
            </div>
+           -->
            <h3>교육 신청 조회</h3>
            <div class="form-border">
                <div class="form-outline mb-4">

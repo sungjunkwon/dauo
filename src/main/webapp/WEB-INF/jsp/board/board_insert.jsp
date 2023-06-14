@@ -10,9 +10,11 @@ pageEncoding="UTF-8" %>
     </jsp:attribute>
     <jsp:body>
        <div class="container">
+           <!--
            <div class="col-12">
                 <img src="/img/banner.png" class="img-fluid" id="banner"/>
            </div>
+           -->
            <h3>증권 교육 신청</h3>
            <div class="form-border">
                <form class="form-horizontal" id="signupForm" action="/signup-super/insert" data-parsley-validate>
