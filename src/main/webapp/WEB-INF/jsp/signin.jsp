@@ -6,7 +6,11 @@ pageEncoding="UTF-8" %>
 
 <t:template title="daou">
     <jsp:attribute name="javascriptSrc">
-        <!--<script src="/js/admin/admin.js"></script>-->
+        <script type="text/javascript">
+            $(document).ready(function(e){
+              $('footer').css('position','absolute');
+            });
+        </script
     </jsp:attribute>
     <jsp:body>
        <div class="container">

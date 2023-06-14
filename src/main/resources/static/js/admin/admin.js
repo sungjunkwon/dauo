@@ -1,3 +1,8 @@
+
+$(document).ready(function(e){
+  $('footer').css('position','absolute');
+});
+
 // 저장 클릭시
 $('#login').unbind().bind().on('click', function () {
     var param = {};

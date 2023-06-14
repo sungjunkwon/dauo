@@ -4,18 +4,16 @@ img[usemap] {
    max-width: 100%;
    width: auto;
  }
+#main {
+    display: block;
+    margin:auto;
+}
+
  @media (min-width: 768px) {
-     #main {
-       display: block;
-     }
-     #m_main {
-       display: none;
-     }
-     #banner {
+    #banner {
         display: block;
-     }
-     #m_banner {
-        display: none;
+        height:130px;
+        margin:auto;
      }
     footer {
         background: #f7f7f7;
@@ -27,18 +25,11 @@ img[usemap] {
 
    }
 @media (max-width: 425px) {
-  #main {
-    display: none;
-  }
-  #m_main {
-    display: block;
-  }
-  #banner {
-    display: none;
-  }
-  #m_banner {
-    display: block;
-  }
+    #banner {
+        display: block;
+        height: 90px;
+        margin: auto;
+    }
     footer {
         background: #f7f7f7;
         position: relative;

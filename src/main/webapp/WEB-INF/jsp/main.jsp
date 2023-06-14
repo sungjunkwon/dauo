@@ -11,17 +11,10 @@
     <jsp:body>
        <div class="container">
            <div class="col-12">
-             <img src="/img/main.jpg" id="main" width="1296" height="914" usemap="#mainMap"/>
+             <img src="/img/main.png" id="main" width="636" height="901" usemap="#mainMap"/>
              <map name="mainMap">
-                 <area shape="rect" title="교육신청" coords="82,607,436,701" href="/board/insert">
-                 <area shape="rect" title="신청조회" coords="583,606,937,701" href="/board/list">
+                <area shape="rect" title="교육신청" coords="238,302,410,370" href="/board/insert">
              </map>
-
-              <img src="/img/m_main.jpg" id="m_main" width="600" height="962" usemap="#m_mainMap"/>
-              <map name="m_mainMap">
-                  <area shape="rect" title="교육신청" coords="46,658,335,731" href="/board/insert">
-                  <area shape="rect" title="신청조회" coords="47,770,337,844" href="/board/list">
-              </map>
            </div>
        </div>
     </jsp:body>

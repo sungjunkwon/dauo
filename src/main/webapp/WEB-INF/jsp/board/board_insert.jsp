@@ -11,8 +11,7 @@ pageEncoding="UTF-8" %>
     <jsp:body>
        <div class="container">
            <div class="col-12">
-                <img src="/img/banner.jpg" class="img-fluid" id="banner"/>
-                <img src="/img/m_banner.jpg" class="img-fluid" id="m_banner"/>
+                <img src="/img/banner.png" class="img-fluid" id="banner"/>
            </div>
            <h3>증권 교육 신청</h3>
            <div class="form-border">
@@ -30,7 +29,7 @@ pageEncoding="UTF-8" %>
 
                    <div class="form-outline mb-4">
                        <label class="col-sm-4 control-label" for="boradTitle">과목</label>
-                       <input type="text" class="form-control" id="boardTitle" name="boardTitle" placeholder="과목" value="증권 교육" readOnly>
+                       <input type="text" class="form-control" id="boardTitle" name="boardTitle" placeholder="과목" value="ETF 투자 증권교육" readOnly>
                    </div>
 
                    <div class="form-outline mb-4">
