@@ -17,10 +17,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -28,6 +30,8 @@ public class CommonServiceImpl implements CommonService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private AdminRepository adminRepository;
+
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     public CommonServiceImpl(AdminRepository adminRepository) {
@@ -45,7 +49,8 @@ public class CommonServiceImpl implements CommonService {
 
         admin.setAdminNm(input.getAdminNm());
         admin.setAdminId(input.getAdminId());
-        admin.setAdminPw(CommonUtil.encryptPassword(new BCryptPasswordEncoder(), input.getAdminPw()));
+        // admin.setAdminPw(CommonUtil.encryptPassword(new BCryptPasswordEncoder(), input.getAdminPw()));
+        admin.setAdminPw(passwordEncoder.encode(input.getAdminPw()));
         admin.setAdminAuth((long) 1);
         admin.setRegDt(curDate);
 
@@ -71,7 +76,8 @@ public class CommonServiceImpl implements CommonService {
 
         admin.setAdminNm(input.getAdminNm());
         admin.setAdminId(input.getAdminId());
-        admin.setAdminPw(CommonUtil.encryptPassword(new BCryptPasswordEncoder(), input.getAdminPw()));
+        // admin.setAdminPw(CommonUtil.encryptPassword(new BCryptPasswordEncoder(), input.getAdminPw()));
+        admin.setAdminPw(passwordEncoder.encode(input.getAdminPw()));
         admin.setAdminAuth((long) 1);
         admin.setRegDt(curDate);
 
@@ -101,17 +107,8 @@ public class CommonServiceImpl implements CommonService {
         authToken.setId(admin.getAdminId());
         authToken.setPassword(admin.getAdminPw());
         authToken.setName(admin.getAdminNm());
-        /*
-        authToken.setAuth(admin.getAdminRole().getAdminRoleNm());
 
-        List<GrantedAuthority> grantedAuths = new ArrayList<>();
-
-        AdminRole adminRole = admin.getAdminRole();
-        grantedAuths.add(new SimpleGrantedAuthority(adminRole.getAdminRoleNm()));
-        */
-        authToken.setAuth("Supervisor");
-
-        List<GrantedAuthority> grantedAuths = new ArrayList<>();
+        ArrayList<GrantedAuthority> grantedAuths = new ArrayList<>();
         grantedAuths.add(new SimpleGrantedAuthority("Supervisor"));
 
         authToken.setAuthorities(grantedAuths);

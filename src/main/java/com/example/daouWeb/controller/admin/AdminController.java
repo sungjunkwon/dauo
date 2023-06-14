@@ -54,7 +54,7 @@ public class AdminController {
     }
 
     @RequestMapping(value="/checkAdmin", method = RequestMethod.POST)
-    public @ResponseBody Result checkAdmin(@ModelAttribute Admin input) {
+    public @ResponseBody Result checkAdmin(@RequestBody Admin input) {
         return adminService.checkAdmin(input);
     }
 }

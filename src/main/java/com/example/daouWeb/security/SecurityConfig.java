@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 //@RequiredArgsConstructor
 @EnableWebSecurity
@@ -23,6 +24,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private CustomAccessDeniedHandler customAccessDeniedHandler;
     private CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
     private CommonService commonService;
+
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     public SecurityConfig(SecuritySignInSuccessHandler securitySignInSuccessHandler, SecuritySignInFailHandler securitySignInFailHandler, SecuritySignOutSuccessHandler securitySignOutSuccessHandler, CustomAccessDeniedHandler customAccessDeniedHandler, CustomAuthenticationEntryPoint customAuthenticationEntryPoint, CommonService commonService) {
@@ -58,10 +61,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatcher("/**")
                     .authorizeRequests()
                     .antMatchers("/signin").anonymous()
-                    //.antMatchers("/**").hasAnyAuthority("Supervisor","Manager","User")
-                    .antMatchers("/**").permitAll()
+                    .antMatchers("/**").hasAnyAuthority("Supervisor","Manager","User")
+                    //.antMatchers("/**").permitAll()
                     .antMatchers("/").permitAll()
-                    .antMatchers("/board/**").permitAll()
+                    .antMatchers("/board/insert").permitAll()
                     .antMatchers("/signup-super").permitAll()
                     .antMatchers(UrlConfig.AUTHENTICATION_WHITE_LIST).permitAll()
                 .and()
@@ -80,9 +83,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logoutUrl(UrlConfig.DEFAULT_SIGNOUT_PROCESS_URL)
                     .logoutSuccessHandler(securitySignOutSuccessHandler)
                 .and()
-                    .exceptionHandling().accessDeniedHandler(customAccessDeniedHandler)
-                .and()
-                    .csrf().disable();
-
+                    .exceptionHandling().accessDeniedHandler(customAccessDeniedHandler);
     }
 }

@@ -6,13 +6,13 @@ pageEncoding="UTF-8" %>
 
 <t:template title="daou">
     <jsp:attribute name="javascriptSrc">
-        <script src="/js/admin/admin.js"></script>
+        <!--<script src="/js/admin/admin.js"></script>-->
     </jsp:attribute>
     <jsp:body>
        <div class="container">
            <h3>관리자 로그인</h3>
            <div class="form-border">
-               <form data-parsley-validate>
+               <form method="POST" action="/signin" data-parsley-validate>
                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
                     <div class="form-outline mb-4">
@@ -28,7 +28,8 @@ pageEncoding="UTF-8" %>
 
                     <!-- Submit button -->
                     <div class="form-outline text-center">
-                       <button type="button" id="login" class="btn btn-primary btn-block mb-4">로그인</button>
+                       <!--<button type="button" id="login" class="btn btn-primary btn-block mb-4">로그인</button>-->
+                       <button type="submit" id="login" class="btn btn-primary btn-block mb-4">로그인</button>
                     </div>
                </form>
            </div>

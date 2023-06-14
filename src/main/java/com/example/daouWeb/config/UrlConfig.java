@@ -10,7 +10,7 @@ public class UrlConfig {
 
     public final static String PERMISSION_ERROR_PAGE_URL = "/permission-error";
 
-    public final static String [] DEFAULT_WEB_IGNORE_MATCHER = {"/main", "/", "/img/**", "/css/**", "/js/**", "/font/**", "/data/**", "/vendor/**", "/swagger-resources", "/configuration/security", "/webjars/**"};
+    public final static String [] DEFAULT_WEB_IGNORE_MATCHER = {"/main", "/", "/checkAdmin", "/img/**", "/css/**", "/js/**", "/font/**", "/data/**", "/vendor/**", "/swagger-resources", "/configuration/security", "/webjars/**"};
     public final static String [] REQUIRED_AUTHENTICATION_LIST = {"/**"};
     public final static String [] AUTHENTICATION_WHITE_LIST = {DEFAULT_SIGNUP_SUPER_ADMIN, PERMISSION_ERROR_PAGE_URL, DEFAULT_SIGNOUT_PROCESS_URL};
 }
