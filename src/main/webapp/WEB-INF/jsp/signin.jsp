@@ -30,8 +30,8 @@ pageEncoding="UTF-8" %>
 
                     <!-- Submit button -->
                     <div class="form-outline text-center">
+                      <button type="submit" id="login" class="btn btn-kiwoom btn-block mb-4">로그인</button>
                        <!--<button type="button" id="login" class="btn btn-kiwoom btn-block mb-4">로그인</button>-->
-                       <button type="submit" id="login" class="btn btn-kiwoom btn-block mb-4">로그인</button>
                     </div>
                </form>
            </div>
