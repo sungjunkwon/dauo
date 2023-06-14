@@ -19,9 +19,9 @@ pageEncoding="UTF-8" %>
                     </span>
                 </div>
            </div>
-           <div class="table-responsive">
-               <table class="table table‑bordered table-striped table‑condensed table-hover">
-                   <thead class="th-text-center">
+           <div class="table-responsive py-5">
+               <table class="table table‑bordered table-hover">
+                   <thead class="thead-dark th-text-center">
                    <tr>
                        <th width="10%">no</th>
                        <th width="15%">작성자</th>
