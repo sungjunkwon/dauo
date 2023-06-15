@@ -31,14 +31,22 @@ public class BoardRepositoryImpl extends QuerydslRepositorySupport implements Bo
     public BoardRepositoryImpl() {super(BoardDTO.class);}
 
     @Override
-    public Long getBoardListTotal() {
+    public Long getBoardListTotal(CustomSearchParam customSearchParam) {
         JPAQueryFactory queryFactory = new JPAQueryFactory(this.getEntityManager());
 
         QBoard board = QBoard.board;
 
-        // LocalDate currentDate = LocalDate.now();
+        BooleanBuilder booleanBuilder = new BooleanBuilder();
+
+        if(customSearchParam.getType() != null){
+            if(customSearchParam.getType() == SearchType.SEARCH_BY_BOARD_WRITER){
+                booleanBuilder
+                        .and(board.boardWriter.like('%' + customSearchParam.getSearchText()+'%'));
+            }
+        }
 
         return queryFactory.select(board.count())
+                .where(booleanBuilder)
                 .from(board)
                 .fetchOne();
     }

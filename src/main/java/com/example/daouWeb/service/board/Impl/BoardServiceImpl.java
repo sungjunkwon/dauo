@@ -53,7 +53,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public Long getBoardListTotal() {
-        return boardRepository.getBoardListTotal();
+    public Long getBoardListTotal(CustomSearchParam customSearchParam) {
+        return boardRepository.getBoardListTotal(customSearchParam);
     }
 }

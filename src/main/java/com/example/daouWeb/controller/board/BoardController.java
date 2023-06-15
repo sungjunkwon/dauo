@@ -33,7 +33,7 @@ public class BoardController {
     @RequestMapping(value = "/board/list", method = RequestMethod.GET)
     public String getBoardList(Model model, @ModelAttribute CustomSearchParam customSearchParam){
         model.addAttribute("result", boardService.getBoardList(customSearchParam));
-        model.addAttribute("total", boardService.getBoardListTotal());
+        model.addAttribute("total", boardService.getBoardListTotal(customSearchParam));
         return "board/board_list";
     }
 

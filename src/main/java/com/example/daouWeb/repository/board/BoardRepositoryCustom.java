@@ -8,7 +8,7 @@ import org.springframework.data.domain.Page;
 public interface BoardRepositoryCustom {
     Page<BoardDTO> getBoardList(CustomSearchParam customSearchParam);
 
-    Long getBoardListTotal();
+    Long getBoardListTotal(CustomSearchParam customSearchParam);
 
     BoardDTO getBoardDetail(Long id);
 

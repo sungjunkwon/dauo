@@ -17,6 +17,6 @@ public interface BoardService {
 
     Result insertBoard(Board board);
 
-    Long getBoardListTotal();
+    Long getBoardListTotal(CustomSearchParam customSearchParam);
 }
 
