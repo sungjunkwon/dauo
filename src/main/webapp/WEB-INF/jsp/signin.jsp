@@ -9,6 +9,10 @@ pageEncoding="UTF-8" %>
         <script type="text/javascript">
             $(document).ready(function(e){
               $('footer').css('position','absolute');
+
+              if($('#errorMsg').val().length > 0){
+                 alert($('#errorMsg').val());
+              }
             });
         </script
     </jsp:attribute>
@@ -19,10 +23,11 @@ pageEncoding="UTF-8" %>
                <form method="POST" action="/signin" data-parsley-validate>
                <!--<form data-parsley-validate>-->
                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                   <input type="hidden" id="errorMsg" value="${errorMessage}"/>
 
                     <div class="form-outline mb-4">
                        <label class="control-label" for="inputId">아이디</label>
-                       <input class="form-control" id="inputId" name="adminId" type="text" autofocus placeholder="아이디를 입력하세요" data-parsley-required="true" data-parsley-trigger="change"
+                       <input class="form-control" id="inputId" name="adminId" type="email" autofocus placeholder="아이디를 입력하세요 ex) email@address.com" data-parsley-required="true" data-parsley-trigger="change"
                         data-parsley-minlength="5" data-parsley-type="email">
                     </div>
 

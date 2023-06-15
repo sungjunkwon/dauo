@@ -55,7 +55,7 @@ public class CommonServiceImpl implements CommonService {
         admin.setRegDt(curDate);
 
         if(adminRepository.findByAdminId(input.getAdminId()) != null){
-            result = new Result(EnumResCode.E004);
+            result = new Result(EnumResCode.E006);
         }else{
             adminRepository.save(admin);
             result = new Result(EnumResCode.OK);

@@ -17,7 +17,7 @@ pageEncoding="UTF-8" %>
 
               <div class="form-outline mb-4">
                   <label class="col-sm-4 control-label" for="inputId">아이디</label>
-                  <input class="form-control" id="inputId" name="adminId" placeholder="아이디를 입력하세요" data-parsley-required="true" data-parsley-trigger="change"
+                  <input class="form-control" id="inputId" name="adminId" placeholder="아이디를 입력하세요 ex) email@address.com" data-parsley-required="true" data-parsley-trigger="change"
                          data-parsley-minlength="5" data-parsley-type="email">
               </div>
 
